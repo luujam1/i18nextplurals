@@ -1,0 +1,7 @@
+{
+    "app": {
+      "name": "GER test",
+	  "items": "GER an item",
+	  "items_plural": "GER __count__ items"
+    }
+}  

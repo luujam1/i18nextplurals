@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Plurals</title>
+
+	<script src="lib/jquery-2.1.4.min.js"></script>
+	<script src="lib/i18next.js"></script>
+
+</head>
+
+<body>
+	<div data-i18n="app.name"></div>
+    <ul class="nav">
+	   <li id="test3" data-i18n="app.items" data-i18n-options='{"count":1}'></li>
+	   <li data-i18n="app.items" data-i18n-options='{"count":5}'></li>
+    </ul>
+	
+	<button onClick="changeLocale()">change locale</button>
+
+	<script>
+
+	var changeLocale = function() {
+	if($.i18n.lng() !== 'de') {
+		$.i18n.setLng('de',function() {
+			$('body').i18n();
+		});
+		} else {
+		$.i18n.setLng('en',function() {
+			$('body').i18n();
+		});
+		}
+	};
+	
+    $.i18n.init({
+        useLocalStorage: false,
+		ns: {
+			namespaces: ['i18n'],
+			defaultNs: 'i18n'
+		},
+		resGetPath: 'locales/__lng__/__ns__.json',
+        debug: true,
+		useDataAttrOptions: true,
+		defaultValueFromContent: false
+    }, function(t) {
+		$('body').i18n();
+	
+    });
+
+
+
+	</script>
+
+</body>
+
+</html>

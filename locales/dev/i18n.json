@@ -1,0 +1,7 @@
+{
+    "app": {
+      "name": "test",
+	  "items": "an item",
+	  "items_plural": "__count__ items"
+    }
+}  
